@@ -20,6 +20,22 @@ jobs:
           npm run build
         env:
           CI: true
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: dist
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Download production artifacts
+        uses: actions/download-artifact@v1
+        with:
+          name: dist
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.8
         env:
