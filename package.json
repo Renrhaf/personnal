@@ -4,15 +4,23 @@
   "description": "personnal website",
   "main": "index.js",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.1.0",
-    "bulma": "^0.7.1",
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "bulma": "^0.7.5",
     "bulma-start": "0.0.2",
-    "bulma-tooltip": "^2.0.1",
+    "bulma-tooltip": "^2.0.2",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node dist/js/app.js",
+    "build-css": "node-sass --include-path scss scss/styles.scss dist/css/styles.css"
   },
   "repository": {
     "type": "git",
