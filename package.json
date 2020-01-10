@@ -19,7 +19,8 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "start": "tsc && node dist/js/app.js",
+    "start": "npm run build && node dist/js/app.js",
+    "build": "npm run build-css && tsc",
     "build-css": "node-sass --include-path scss scss/styles.scss dist/css/styles.css"
   },
   "repository": {
