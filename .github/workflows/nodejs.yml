@@ -23,6 +23,7 @@ jobs:
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.0.8
         env:
+          GITHUB_WORKSPACE: dist/
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
