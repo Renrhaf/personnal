@@ -1,18 +1,11 @@
 import React, { Component } from "react";
 import PageHelmet from "../component/common/Helmet";
 import ModalVideo from 'react-modal-video';
-import {FaTwitter ,FaInstagram ,FaFacebookF , FaLinkedinIn} from "react-icons/fa";
 import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
 import Footer from "../component/footer/Footer";
-
-const SocialShare = [
-    {Social: <FaFacebookF /> , link: 'https://www.facebook.com/'},
-    {Social: <FaLinkedinIn /> , link: 'https://www.linkedin.com/'},
-    {Social: <FaInstagram /> , link: 'https://www.instagram.com/'},
-    {Social: <FaTwitter /> , link: 'https://twitter.com/'},
-]
+import SocialShare from "../elements/social/SocialNetworks";
 
 class PortfolioDetails extends Component{
     constructor () {
@@ -31,7 +24,7 @@ class PortfolioDetails extends Component{
                 <PageHelmet pageTitle='Portfolio Details' />
 
                 <Header headertransparent="header--transparent" colorblack="color--black" logoname="logo.png" />
-                
+
                 {/* Start Breadcrump Area */}
                 <div className="rn-page-title-area pt--120 pb--190 bg_image bg_image--4"  data-black-overlay="7">
                     <div className="container">
@@ -89,7 +82,7 @@ class PortfolioDetails extends Component{
                                             <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='ZOoVOfieAF8' onClose={() => this.setState({isOpen: false})} />
                                             <button className="video-popup position-top-center" onClick={this.openModal}><span className="play-icon"></span></button>
                                         </div>
-                                        
+
                                         <div className="thumb mb--30">
                                             <img src="/assets/images/portfolio/portfolio-big-02.jpg" alt="Portfolio Images"/>
                                         </div>
@@ -159,8 +152,8 @@ class PortfolioDetails extends Component{
                     </ScrollToTop>
                 </div>
                 {/* End Back To Top */}
-                
-                <Footer />  
+
+                <Footer />
 
 
             </React.Fragment>

@@ -1,38 +1,55 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { portfolioSlick2 } from "../../../page-demo/script";
 
+const portfolioSlickSettings = {
+  infinite: false,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  dots: true,
+  arrows: true,
+  responsive: [{
+    breakpoint: 800,
+    settings: {
+      slidesToShow: 3,
+    }
+  },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 993,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2,
+      }
+    },
+    {
+      breakpoint: 481,
+      settings: {
+        slidesToShow: 1,
+      }
+    }
+  ]
+};
 
 const PortfolioList = [
     {
         image: 'image-1',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
+        category: 'Développement',
+        title: 'Amélioration du site internet d\'un guide de pêche.'
     },
     {
         image: 'image-2',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
-    },
-    {
-        image: 'image-3',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
-    },
-    {
-        image: 'image-4',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
-    },
-    {
-        image: 'image-3',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
-    },
-    {
-        image: 'image-4',
-        category: 'Development',
-        title: ' Getting tickets to the big show'
+        category: 'Réseaux sociaux',
+        title: 'Gestion des pages instagram d\'un couple d\'artisans locaux.'
     }
 ]
 
@@ -54,7 +71,7 @@ class Portfolio extends Component{
                         </div>
                     </div>
                     <div className="portfolio-slick-activation mt--70 mt_sm--40">
-                        <Slider {...portfolioSlick2}>
+                        <Slider {...portfolioSlickSettings}>
                             {PortfolioList.map((value , index) => (
                                 <div className="portfolio" key={index}>
                                     <div className="thumbnail-inner">
@@ -66,7 +83,7 @@ class Portfolio extends Component{
                                             <p>{value.category}</p>
                                             <h4><a href="/portfolio-details">{value.title}</a></h4>
                                             <div className="portfolio-button">
-                                                <a className="rn-btn" href="/portfolio-details">Case Study</a>
+                                                <a className="rn-btn" href="/portfolio-details">En savoir plus</a>
                                             </div>
                                         </div>
                                     </div>

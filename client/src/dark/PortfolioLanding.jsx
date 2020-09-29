@@ -32,7 +32,7 @@ const PortfolioLanding = () => {
         <div className="active-dark">
             <Helmet pageTitle="Accueil" pageDescr="Quentin Fahrner est un développeur web freelance proposant ses services en développement logiciel, hébergement, audits techniques, gestion de projet et formation." />
 
-            <HeaderThree homeLink="/" logo="symbol-dark" color="color-black" />
+            <HeaderThree homeLink="/" color="color-black" />
 
             {/* Start Slider Area   */}
             <div id="home" className="fix">

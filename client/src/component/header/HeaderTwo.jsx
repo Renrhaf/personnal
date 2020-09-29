@@ -1,14 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import {FaTwitter ,FaInstagram ,FaFacebookF , FaLinkedinIn } from "react-icons/fa";
 import { FiX , FiMenu} from "react-icons/fi";
-
-const SocialShare = [
-    {Social: <FaFacebookF /> , link: 'https://www.facebook.com/'},
-    {Social: <FaLinkedinIn /> , link: 'https://www.linkedin.com/'},
-    {Social: <FaInstagram /> , link: 'https://www.instagram.com/'},
-    {Social: <FaTwitter /> , link: 'https://twitter.com/'},
-]
+import SocialShare from "../../elements/social/SocialNetworks";
 
 class Header extends Component{
     constructor(props) {
@@ -23,7 +16,7 @@ class Header extends Component{
     menuTrigger() {
         document.querySelector('.header-wrapper').classList.toggle('menu-open')
     }
-    
+
     CLoseMenuTrigger() {
         document.querySelector('.header-wrapper').classList.remove('menu-open')
     }
@@ -38,19 +31,10 @@ class Header extends Component{
                 }
             }
         }
-        const { logo, color='default-color' } = this.props;
-        let logoUrl;
-        if(logo === 'light'){
-            logoUrl = <img src="/assets/images/logo/logo-light.png" alt="Digital Agency" />;
-        }else if(logo === 'dark'){
-            logoUrl = <img src="/assets/images/logo/logo-dark.png" alt="Digital Agency" />;
-        }else if(logo === 'symbol-dark'){
-            logoUrl = <img src="/assets/images/logo/logo-symbol-dark.png" alt="Digital Agency" />;
-        }else if(logo === 'symbol-light'){
-            logoUrl = <img src="/assets/images/logo/logo-symbol-light.png" alt="Digital Agency" />;
-        }else{
-            logoUrl = <img src="/assets/images/logo/logo.png" alt="Digital Agency" />;
-        }
+
+        const { color='default-color' } = this.props;
+        const logoUrl = <img src="/assets/images/logo/logo-symbol-light.svg" alt="Fahrner Quentin, développeur web freelance" />;
+
         return(
             <header className={`header-area header-style-two header--transparent ${color}`}>
                 <div className="header-wrapper">

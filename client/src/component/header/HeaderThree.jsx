@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-import { FaFacebookF, FaLinkedinIn, FaGithub, FaDrupal } from "react-icons/fa";
 import { FiX , FiMenu} from "react-icons/fi";
 import Scrollspy from 'react-scrollspy'
-
-const SocialShare = [
-  {Social: <FaGithub /> , link: 'https://github.com/Renrhaf'},
-  {Social: <FaDrupal /> , link: 'https://www.drupal.org/u/renrhaf'},
-  {Social: <FaFacebookF /> , link: 'https://www.facebook.com/renrhaf'},
-  {Social: <FaLinkedinIn /> , link: 'https://www.linkedin.com/in/renrhaf'}
-]
+import SocialShare from "../../elements/social/SocialNetworks";
 
 class HeaderThree extends Component{
     constructor(props) {
@@ -53,19 +46,8 @@ class HeaderThree extends Component{
                 }
             }
         }
-        const { logo, color='default-color' } = this.props;
-        let logoUrl;
-        if(logo === 'light'){
-            logoUrl = <img src="/assets/images/logo/logo-light.png" alt="Fahrner Quentin, développeur web freelance" />;
-        }else if(logo === 'dark'){
-            logoUrl = <img src="/assets/images/logo/logo-dark.png" alt="Fahrner Quentin, développeur web freelance" />;
-        }else if(logo === 'symbol-dark'){
-            logoUrl = <img src="/assets/images/logo/logo-symbol-light.svg" alt="Fahrner Quentin, développeur web freelance" />;
-        }else if(logo === 'symbol-light'){
-            logoUrl = <img src="/assets/images/logo/logo-symbol-dark.svg" alt="Fahrner Quentin, développeur web freelance" />;
-        }else{
-            logoUrl = <img src="/assets/images/logo/logo.png" alt="Fahrner Quentin, développeur web freelance" />;
-        }
+        const { color='default-color' } = this.props;
+        const logoUrl = <img src="/assets/images/logo/logo-symbol-light.svg" alt="Fahrner Quentin, développeur web freelance" />;
 
         return(
             <header className={`header-area header-style-two header--fixed ${color}`}>

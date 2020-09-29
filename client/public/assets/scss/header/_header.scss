@@ -90,6 +90,8 @@
         .logo {
             a {
                 img {
+                    max-width: 50px;
+
                     @media #{$sm-layout} {
                         width: 120px;
                     }
@@ -123,6 +125,8 @@
             .logo {
                 a{
                     img{
+                        max-width: 50px;
+
                         @media #{$sm-layout} {
                             width: auto;
                         }
