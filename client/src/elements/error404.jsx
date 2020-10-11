@@ -4,12 +4,13 @@ import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Footer from "../component/footer/FooterTwo";
 
- class error404 extends Component {
-    
+class error404 extends Component {
+
     render() {
         return (
             <>
-                <Header headerPosition="header--transparent" color="color-white" logo="logo-light" />
+                <Header headerPosition="header--transparent" color="color-white" />
+
                 {/* Start Page Error  */}
                 <div className="error-page-inner bg_color--4">
                     <div className="container">
@@ -17,10 +18,10 @@ import Footer from "../component/footer/FooterTwo";
                             <div className="col-lg-12">
                                 <div className="inner">
                                     <h1 className="title theme-gradient">404!</h1>
-                                    <h3 className="sub-title">Page not found</h3>
-                                    <span>The page you were looking for could not be found.</span>
+                                    <h3 className="sub-title">Page introuvable</h3>
+                                    <span>La page recherchée n'existe pas.</span>
                                     <div className="error-button">
-                                        <a className="rn-button-style--2 btn-solid" href="/">Back To Homepage</a>
+                                        <a className="rn-button-style--2 btn-solid" href="/">Retour à l'accueil</a>
                                     </div>
                                 </div>
                             </div>
@@ -36,10 +37,11 @@ import Footer from "../component/footer/FooterTwo";
                     </ScrollToTop>
                 </div>
                 {/* End Back To Top */}
-                
-                <Footer /> 
+
+                <Footer />
             </>
         )
     }
 }
+
 export default error404;

@@ -44,20 +44,30 @@ const PortfolioList = [
     {
         image: 'image-1',
         category: 'Développement',
-        title: 'Amélioration du site internet d\'un guide de pêche.'
+        title: 'Amélioration du site internet d\'un guide de pêche.',
+        url: 'https://basquecountry-fishing-guide.com'
     },
     {
         image: 'image-2',
         category: 'Réseaux sociaux',
-        title: 'Gestion des pages instagram d\'un couple d\'artisans locaux.'
+        title: 'Gestion de la page instagram de Philippe Fahrner, artisan vannier.',
+        url: 'https://www.instagram.com/atelier.fahrner/'
+    },
+    {
+      image: 'image-3',
+      category: 'Réseaux sociaux',
+      title: 'Gestion de la page instagram de Valérie Fahrner, céramiste potière.',
+      url: 'https://www.instagram.com/atelier.chouette.ceramiques/'
     }
 ]
 
-class Portfolio extends Component{
-    render(){
-        let title = 'Références',
-        description = 'Découvrez mes réalisations passées, et peut être la vôtre ira-t\'elle bientôt rejoindre cette belle collection ?';
-        return(
+class Portfolio extends Component {
+
+    render() {
+        let title = 'Références';
+        let description = 'Découvrez mes réalisations passées, et peut être la vôtre ira-t\'elle bientôt rejoindre cette belle collection ?';
+
+        return (
             <React.Fragment>
                 <div className="portfolio-wrapper">
                     <div className="container">
@@ -70,6 +80,7 @@ class Portfolio extends Component{
                             </div>
                         </div>
                     </div>
+
                     <div className="portfolio-slick-activation mt--70 mt_sm--40">
                         <Slider {...portfolioSlickSettings}>
                             {PortfolioList.map((value , index) => (
@@ -83,7 +94,7 @@ class Portfolio extends Component{
                                             <p>{value.category}</p>
                                             <h4><a href="/portfolio-details">{value.title}</a></h4>
                                             <div className="portfolio-button">
-                                                <a className="rn-btn" href="/portfolio-details">En savoir plus</a>
+                                                <a className="rn-btn" href={value.url}>En savoir plus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -95,5 +106,7 @@ class Portfolio extends Component{
             </React.Fragment>
         )
     }
+
 }
+
 export default Portfolio;

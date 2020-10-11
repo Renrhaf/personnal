@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PageHelmet from "../component/common/Helmet";
 import { FiHeadphones , FiMail , FiMapPin } from "react-icons/fi";
 import ContactMap from "../component/maps/ContactMap";
-import ContactTwo from "../elements/contact/ContactTwo";
 import ScrollToTop from 'react-scroll-up';
 import { FiChevronUp } from "react-icons/fi";
 import Header from "../component/header/Header";
