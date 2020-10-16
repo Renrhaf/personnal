@@ -8,44 +8,12 @@ import FooterTwo from "../component/footer/FooterTwo";
 import TabTwo from "../elements/tab/TabTwo";
 import ContactThree from "../elements/contact/ContactThree";
 import ServiceList from "../elements/service/ServiceList";
-import BlogContent from "../elements/blog/BlogContent";
 import Portfolio from "../component/HomeLayout/homeOne/Portfolio";
 import CounterOne from "../elements/counters/CounterOne";
 import Testimonial from "../elements/Testimonial";
+import BlogList from "../elements/blog/BlogList";
 
 class PortfolioLanding extends Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      error: null,
-      isLoaded: false,
-      articles: []
-    };
-  }
-
-  componentDidMount() {
-    fetch("https://api.renrhaf.fr/articles")
-      .then(res => res.json())
-      .then(
-          (result) => {
-            this.setState({
-              isLoaded: true,
-              items: result.items
-            });
-          },
-          // Remarque : il est important de traiter les erreurs ici
-          // au lieu d'utiliser un bloc catch(), pour ne pas passer à la trappe
-          // des exceptions provenant de réels bugs du composant.
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-      )
-  }
 
   render() {
       const title = 'Qui suis-je ?';
@@ -53,7 +21,6 @@ class PortfolioLanding extends Component {
           "J'ai forgé mon expérience dans des environnements variés (agence web, firme de consulting, etc) et sur des projets d'envergure.<br/>" +
           "J'apporte mon soutien à des projets open source en contribuant dès que le temps me le permet.<br/>";
 
-      const PostList = BlogContent.slice(0, 3);
       const SlideList = [
         {
           textPosition: 'text-left',
@@ -92,7 +59,7 @@ class PortfolioLanding extends Component {
                                   <span> La gestion de votre projet.</span>
                                   <span> L'envoi de vos newsletters.</span>
                                   <span> La traduction de vos textes.</span>
-                                  <span> La formation de vos employés.</span>
+                                  <span> L'optimisation de votre référencement.</span>
                                 </TextLoop>{" "}
                               </h1>
                               <h2>Quentin Fahrner, développeur web freelance
@@ -217,37 +184,13 @@ class PortfolioLanding extends Component {
                           J'aime écrire sur divers sujets, comme les voyages,
                           les randonnées, la nature ou bien même des articles
                           techniques.<br/>
-                          Consultez mon profil <a
-                            href="https://medium.com/@quentinfahrner">Medium</a> si
+                          Consultez mon profil <a href="https://medium.com/@quentinfahrner">Medium</a> si
                           vous souhaitez en savoir plus.
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="row mt--60 mt_sm--40">
-                    {PostList.map((value, i) => (
-                        <div className="col-lg-4 col-md-6 col-12" key={i}>
-                          <div className="blog blog-style--1">
-                            <div className="thumbnail">
-                              <a href="/blog-details">
-                                <img className="w-100"
-                                     src={`/assets/images/blog/blog-${value.images}.jpg`}
-                                     alt="Blog Images"/>
-                              </a>
-                            </div>
-                            <div className="content">
-                              <p className="blogtype">{value.category}</p>
-                              <h4 className="title"><a
-                                  href="/blog-details">{value.title}</a></h4>
-                              <div className="blog-btn">
-                                <a className="rn-btn text-white"
-                                   href="/blog-details">Read More</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    ))}
-                  </div>
+                  <BlogList/>
                 </div>
               </div>
             </div>

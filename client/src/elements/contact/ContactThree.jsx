@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class ContactThree extends Component{
-    constructor(props){
+    constructor(props) {
         super(props);
+
         this.state = {
             rnName: '',
             rnEmail: '',
@@ -10,7 +12,25 @@ class ContactThree extends Component{
             rnMessage: '',
         };
     }
-    render(){
+
+    handleSubmit(event) {
+      event.preventDefault();
+
+      axios({
+        method: "POST",
+        url:"http://localhost:3000/send",
+        data:  this.state
+      }).then((response)=>{
+        if (response.data.status === 'success') {
+          alert("Message Sent.");
+          this.resetForm()
+        } else if(response.data.status === 'fail') {
+          alert("Message failed to send.")
+        }
+      })
+    }
+
+    render() {
         return(
             <div className="contact-form--1">
                 <div className="container">
@@ -21,7 +41,7 @@ class ContactThree extends Component{
                                 <p className="description">Je suis frais et dispo pour discuter de vos projets ! N'hésitez pas à me contactez par email via le formulaire ci-dessous, je vous répondrais sous 48h tout au plus.</p>
                             </div>
                             <div className="form-wrapper">
-                                <form>
+                                <form onSubmit={this.handleSubmit.bind(this)} method="POST">
                                     <label htmlFor="item01">
                                         <input
                                             type="text"
